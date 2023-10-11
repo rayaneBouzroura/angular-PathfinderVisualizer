@@ -1,1 +1,19 @@
-<p>grid-display works!</p>
+<!-- Buttons to select action -->
+<button [disabled]="startPlaced" (click)="setAction('start')">Place Start</button>
+<button (click)="setAction('stop')">Place Stops</button>
+
+<!-- Grid display -->
+
+<!-- The [ngClass] directive dynamically adds or removes CSS classes on an HTML element based on an expression. In this case: -->
+<!-- cell': true ensures the cell class is always applied.
+    'start': cell.type === 'start' adds the start class if the cell's type is 'start'.
+    'stop': cell.type === 'stop' adds the stop class if the cell's type is 'stop'. -->
+<div class="container">
+  <div class="grid">
+    <div *ngFor="let cell of cells; let i = index"
+         [ngClass]="{'cell': true, 'start': cell.type === 'start', 'stop': cell.type === 'stop'}"
+         (click)="onCellClick(i)">
+    </div>
+  </div>
+</div>
+

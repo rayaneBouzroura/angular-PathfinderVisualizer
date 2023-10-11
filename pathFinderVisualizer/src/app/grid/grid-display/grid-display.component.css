@@ -1,0 +1,26 @@
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 420px; /* Increased grid size */
+  justify-content: center;
+  align-items: center;
+}
+.cell {
+  width: 40px; /* Increased cell size */
+  height: 40px; /* Increased cell size */
+  border: 1px solid #000;
+  box-sizing: border-box;
+}
+.cell.start {
+  background-color: green;
+}
+.cell.stop {
+  background-color: red;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height of the viewport */
+}
